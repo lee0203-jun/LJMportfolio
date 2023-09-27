@@ -519,8 +519,8 @@ background: url(../img/top-arrow-on.png) no-repeat center/cover;
 
   .imgBox3{
     position: relative;
-    top: -142%;
-    right: 7%;
+    top: -120%;
+    right: 8%;
     width: 600px;
     z-index: -1;
   }
@@ -554,7 +554,7 @@ background: url(../img/top-arrow-on.png) no-repeat center/cover;
   
     .imgBox3{
       top: -70%;
-      right: 6%;
+      right: 19%;
     }
     
   
