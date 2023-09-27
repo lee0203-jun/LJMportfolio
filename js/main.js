@@ -423,7 +423,6 @@ tl3.to('.mainArea_item2>.secText>.logoBox',{
                   start:"top+=200 bottom-=200",
                   end:"bottom+=200 100%-=300",
                   scrub:true,
-                  markers:true,
                   onEnter:function() {
                     // 위에서 아래로 내려오다가 트리거 엘리먼트의 정수리를 발견했을 때
                     $('.mainArea_item6>.secText').css('opacity','0'),

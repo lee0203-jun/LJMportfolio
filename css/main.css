@@ -1299,10 +1299,7 @@ flex-direction: column;
 background-color: #ffffff;
   }
 
-  .fotBox:nth-child(3):hover a{
-    display: flex;
-    flex-direction: column;
-  }
+ 
 
   .fotBox:nth-child(4):hover a{
     display: flex;
@@ -1312,9 +1309,7 @@ background-color: #ffffff;
   .fotBox:hover p{
 color: #000;  }
 
-.fotBox:nth-child(3):hover p{
-  display: none;
-}
+
 
 .fotBox:nth-child(4):hover p{
   display: none;
@@ -1399,6 +1394,10 @@ color: #000;  }
     margin-top: 5px;
    }
     
+
+   .fotBox:nth-child(4) span{
+    font-size: 2rem;
+   }
   
     
 
@@ -1464,7 +1463,10 @@ color: #000;  }
       font: bold 2rem  'Anton';
     }
   
-   
+    .fotBox:nth-child(4) span{
+      font-size: 1rem;
+     }
+    
     
   
     
