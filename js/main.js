@@ -1,5 +1,24 @@
 $(function () {
   console.clear();
+
+  // header 이벤트 시작
+  window.addEventListener("scroll", function () {
+    console.log(window.scrollY);
+    const $window = $(window);
+    const $header = $("header"); //헤더를 변수에 넣기
+    $window.scroll(function () {
+      if ($window.scrollTop() >= 125) {
+        $header.addClass("down");
+      } else $header.removeClass("down");
+    });
+
+    $(".scrollTop").on("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  });
   // cursor이벤트 시작
   const $cursor = $(".cursor");
   const $cursorSahdow1 = $(".cursor_shadow1");
@@ -36,6 +55,23 @@ $(function () {
   });
 
   // cursor이벤트 끝
+
+  // ********** modal script **********
+  $(".image_grid li").click(function () {
+    let modalIndex = $(this).index();
+    $(".modalWrap li").removeClass("active");
+    $(".modalWrap li").eq(modalIndex).addClass("active");
+    $(".modalDim").addClass("active");
+    $("html,body").on("scroll touchmove mousewheel", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      return false;
+    });
+  });
+  $(".modalClose, .modalDim").click(function () {
+    $(".modalWrap li, .modalDim").removeClass("active");
+    $("html,body").off("scroll touchmove mousewheel");
+  });
 
   // title 이벤트 시작
 
@@ -361,9 +397,9 @@ $(function () {
 
   // titleBox2
 
-  const title2 = gsap.timeline({
+  const designArea = gsap.timeline({
     scrollTrigger: {
-      trigger: ".titleBox2",
+      trigger: ".design_Area",
       start: "top+=200 bottom-=200",
       end: "bottom+=200 100%-=300",
       scrub: true,
@@ -378,6 +414,15 @@ $(function () {
         $(".mainArea_item6>.secText").css("opacity", "1"),
           $("body").removeClass("back8");
       },
+    },
+  });
+
+  const title2 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".titleBox2",
+      start: "top+=200 bottom-=200",
+      end: "bottom+=200 100%-=300",
+      scrub: true,
     },
   });
 

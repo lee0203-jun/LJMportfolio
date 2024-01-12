@@ -5,7 +5,6 @@
 body {
   background-color: #000;
   height: 100vh;
-  position: relative;
   transition: all 0.5s;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -87,11 +86,11 @@ body.back8 {
 .scrollTop {
   width: 100px;
   height: 100px;
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddcba2;
   border-radius: 50px;
   position: fixed;
   bottom: 5%;
-  right: 5%;
+  right: 2%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -99,7 +98,7 @@ body.back8 {
 }
 
 .scrollTop:hover {
-  background-color: #ffffff;
+  background-color: #ddcba2;
 }
 
 .scrollTop:hover .scrollArrow {
@@ -123,6 +122,28 @@ header {
   z-index: 1000;
 }
 
+.header_list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 40px;
+  width: 20%;
+}
+
+.header_list a {
+  margin-right: 4px;
+  font-size: 1.5rem;
+  color: #ddcba2;
+  font-weight: bold;
+  padding: 20px;
+  transition: all 0.3s;
+}
+
+.header_list a:hover {
+  background-color: rgb(227, 227, 227);
+  color: #000;
+}
+
 header.down {
   z-index: 1000;
   position: fixed;
@@ -134,26 +155,37 @@ header.down {
   mix-blend-mode: difference;
 }
 
-header.down > p {
-  color: #ffffff;
-}
-
 header > p {
   font-size: 1.5rem;
   color: #ddcba2;
   font-weight: bold;
-  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
-  header {
-    width: 99%;
+  .header_list {
+    margin-right: 97px;
+  }
+
+  .header_list a {
+    font-size: 1.2rem;
+    margin-right: 2px;
+    padding: 10px;
   }
 }
 
 @media (max-width: 390px) {
   header > p {
     font-size: 1.2rem;
+  }
+
+  .header_list {
+    margin-right: 76px;
+  }
+
+  .header_list a {
+    font-size: 1.2rem;
+    margin-right: 2px;
+    padding: 10px;
   }
 }
 
@@ -496,7 +528,7 @@ header > p {
 
 .imgBox2 {
   position: relative;
-  top: -101%;
+  top: -111%;
   right: -53%;
   overflow: hidden;
   width: 600px;
@@ -921,6 +953,45 @@ main {
 
 .itemimg.img6:hover {
   background: url(../img/세븐나이츠이미지.jpg) no-repeat center/cover;
+}
+
+.grapicArea {
+  width: 100%;
+  height: 100vh;
+}
+
+.grapicBox {
+  width: 100%;
+  height: 80%;
+}
+
+.grapicArea p {
+  font-size: 4vw;
+  color: #ffff;
+  font-weight: bold;
+}
+
+.grapicArea ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.grapicArea ul > li {
+  width: 20vw;
+  height: 60%;
+  background: url(../img/디자인1.png) no-repeat center/cover;
+}
+
+.grapicArea ul > li:hover img {
+  height: 80vh;
+  display: block;
+}
+
+.grapicArea ul > li > img {
+  display: none;
 }
 
 @media (max-width: 768px) {
@@ -1411,4 +1482,191 @@ footer {
     margin-left: 10px;
     margin-bottom: 10px;
   }
+}
+
+/* -------------------- section 5 -------------------- */
+.design_Area {
+  position: relative;
+}
+.designArea_title {
+  font: bold 2vw "PyeongChangPeace";
+  text-align: center;
+  color: #ddcba2;
+  border: 1px solid #ddcba2;
+  border-radius: 100px;
+  padding: 5px 10px;
+  margin: 0 10vw;
+  position: relative;
+  top: 127px;
+  transition: all 0.3s;
+}
+
+.designArea_title:hover {
+  background-color: rgb(227, 227, 227);
+  color: #000;
+}
+
+.designArea_inner {
+  padding: 10vw;
+}
+.image_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+}
+.image_grid > li {
+  border: 1px solid #ddcba2;
+  box-sizing: border-box;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+.image_grid > li > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* border radius */
+.image_grid > li:nth-child(1) {
+  border-radius: 2vw 0 0 0;
+}
+.image_grid > li:nth-child(4) {
+  border-radius: 0 2vw 0 0;
+}
+.image_grid > li:nth-child(5) {
+  border-radius: 0 0 0 2vw;
+}
+.image_grid > li:nth-child(8) {
+  border-radius: 0 0 2vw 0;
+}
+/* thumb img location */
+.image_grid > li:nth-child(1) > a {
+  background: url(../img/design1_thumb.jpg) no-repeat center/cover;
+}
+.image_grid > li:nth-child(2) > a {
+  background: url(../img/design2_thumb.jpg) no-repeat center/cover;
+}
+.image_grid > li:nth-child(3) > a {
+  background: url(../img/design3_thumb.jpg) no-repeat center/cover;
+}
+.image_grid > li:nth-child(4) > a {
+  background: url(../img/design4_thumb.jpg) no-repeat center/cover;
+}
+.image_grid > li:nth-child(5) > a {
+  background: url(../img/design5_thumb.jpg) no-repeat center/cover;
+}
+.image_grid > li:nth-child(6) > a {
+  background: url(../img/design6_thumb.jpg) no-repeat center/cover;
+}
+.image_grid > li:nth-child(7) > a {
+  background: url(../img/design7_thumb.jpg) no-repeat center/cover;
+}
+.image_grid > li:nth-child(8) > a {
+  background: url(../img/design8_thumb.jpg) no-repeat center/cover;
+}
+/* hover dim */
+.image_grid > li > a::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 2vw;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.image_grid > li > a:hover::after {
+  opacity: 1;
+}
+
+/* -------------------- modal -------------------- */
+.modalWrap {
+}
+.modalList {
+}
+.modalList > li {
+  display: none;
+}
+.modalList > li > div {
+  position: fixed;
+  z-index: 900;
+  width: 50%;
+  height: 80%;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  overflow-x: hidden;
+  background: url(../img/noise_bg1.png);
+  border: 1px solid #fff;
+  padding: 10px;
+}
+.modalList > li > div > span {
+  display: inline-block;
+  color: #fff;
+  white-space: nowrap;
+  padding: 0 0 10px 10px;
+  font: 16px "Pretendard";
+  line-height: 50px;
+}
+.modalList > li > div > span:first-child::after {
+  content: "|";
+  margin-left: 10px;
+}
+.modalList > li > div > span > a {
+  display: block;
+  color: #fff;
+  animation: figmalink-animation ease 3s infinite;
+}
+.modalList > li > div > span > a:hover {
+  color: #f7f008;
+}
+@keyframes figmalink-animation {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.modalClose {
+  position: absolute;
+  font-size: 50px;
+  color: #fff;
+  right: 10px;
+  top: 10px;
+}
+.modalList > li > div > img {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+}
+.modalList > li.active {
+  display: block;
+}
+.modalDim {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s;
+}
+.modalDim.active {
+  opacity: 0.7;
+  z-index: 899;
+  pointer-events: auto;
 }
